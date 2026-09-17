@@ -30,4 +30,4 @@ I code and push every day. Follow my journey.
 
 ## Connect
 
-- GitHub: <https://github.com/dooloodooloo260-cpu>
+- GitHub: dooloogantulkhuur.facebook.com
