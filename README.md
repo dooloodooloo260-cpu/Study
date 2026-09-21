@@ -30,4 +30,4 @@ I code and push every day. Follow my journey.
 
 ## Connect
 
-- GitHub:
+- GitHub: dooloo.gantulkhuur@facebook.com
