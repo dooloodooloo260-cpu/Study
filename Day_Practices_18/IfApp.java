@@ -2,7 +2,7 @@
 
 public class IfApp {
     public static void main(String[]args) {
-        int days = 0;
+        int days = 45;
         int goal = 90; 
         int half = goal /2 ;
 
