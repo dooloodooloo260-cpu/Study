@@ -22,7 +22,7 @@
 
 -[x] Day 10-16
 
--[x]
+-[x] Day 17 ( empty )
 
 ### In Progress
 
