@@ -20,7 +20,9 @@
 
 -[x] Day 9: MarkDown
 
--[x] Day 10-16 
+-[x] Day 10-16
+
+-[x]
 
 ### In Progress
 
@@ -32,4 +34,4 @@ I code and push every day. Follow my journey.
 
 ## Connect
 
-- GitHub: dooloo.gantulkhuur@facebook.com
+- GitHub:
