@@ -26,7 +26,7 @@
 
 ### In Progress
 
-[ ] Day 10: (next topic)
+[ ] Day 20: (next 21 java)
 
 ## Daily Commit Habit
 
