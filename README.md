@@ -20,6 +20,8 @@
 
 -[x] Day 9: MarkDown
 
+-[x] Day 10-16 
+
 ### In Progress
 
 [ ] Day 10: (next topic)
