@@ -34,7 +34,7 @@ I code and push every day. Follow my journey.
 
 | Шалгах                         | Тэмдэглэгээ |
 | ------------------------------ | ----------- |
-| JDK устсан                     | ☐           |
+| JDK s                          | ☐           |
 | Grid browser дээр харагдана    | ☐           |
 | Day 1-21 товшоод бүгд нээгдэнэ | ☐           |
 | `main -> main` push            | ☐           |
