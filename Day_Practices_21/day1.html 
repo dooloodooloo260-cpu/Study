@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial; max-width: 600px; margin: 40px auto; padding: 20px; background: #f9f9f9; }
+    .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    h1 { color: #333; border-bottom: 3px solid #4CAF50; padding-bottom: 10px; }
+    .content { line-height: 1.8; color: #555; }
+    .back { display: inline-block; margin-top: 20px; color: #4CAF50; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>📖 Day 1: Files & Folders</h1>
+    <div class="content">
+      <h3>What I learned:</h3>
+      <ul>
+        <li>File = content (text, image)</li>
+        <li>Folder = container</li>
+        <li>Ctrl+X / Ctrl+V to move</li>
+      </ul>
+      <h3>Practice:</h3>
+      <p>Created folder structure, moved files</p>
+      <p><a href="index.html" class="back">← Back to Tracker</a></p>
+    </div>
+  </div>
+</body>
+</html>

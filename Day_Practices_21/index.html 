@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: Arial; background: #f0f2f5; padding: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; max-width: 800px; }
+    .day-btn { 
+      padding: 20px; 
+      background: white; 
+      border: 2px solid #ddd; 
+      border-radius: 10px; 
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .day-btn:hover { background: #4CAF50; color: white; transform: scale(1.05); }
+    .completed { background: #4CAF50; color: white; }
+  </style>
+</head>
+<body>
+  <h1>📚 Ken's 90-Day Tracker</h1>
+  <div class="grid">
+    <a href="day1.html" class="day-btn completed">Day 1<br>✅</a>
+    <a href="day2.html" class="day-btn completed">Day 2<br>✅</a>
+    <a href="day3.html" class="day-btn">Day 3<br>⬜</a>
+    <!-- ... Day 21 хүртэл -->
+    <a href="day21.html" class="day-btn">Day 21<br>⬜</a>
+  </div>
+</body>
+</html>
