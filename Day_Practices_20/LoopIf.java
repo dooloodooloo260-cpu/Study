@@ -1,4 +1,4 @@
-package Day_Practices_20;
+
 
 public class LoopIf {
     public static void main(String[]args) {
