@@ -30,9 +30,9 @@
 
 ## Daily Commit Habit
 
-I code and push every day. Follow my journey.
+I code and push every day. Follow my journey. 
 
-| Шалгах                         | Тэмдэглэгээ |
+| гаргах                         | Тэмдэглэгээ |
 | ------------------------------ | ----------- |
 | JDK s                          | ☐           |
 | Grid browser дээр харагдана    | ☐           |
