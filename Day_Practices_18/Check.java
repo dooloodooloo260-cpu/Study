@@ -1,4 +1,4 @@
-package Day_Practices_18;
+
 
 public class Check {
     public static void main(String[] args ) {
