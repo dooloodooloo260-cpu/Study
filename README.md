@@ -44,4 +44,4 @@ I code and push every day. Follow my journey.
 
 - GitHub: 
 
-- Gmail: 
+- Gmail: dooloodooloo26@gmail.com
