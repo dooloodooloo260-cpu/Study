@@ -42,4 +42,6 @@ I code and push every day. Follow my journey.
 
 ## Connect
 
-- GitHub: dooloodooloo260@gmail.com
+- GitHub: 
+
+- Gmail: 
