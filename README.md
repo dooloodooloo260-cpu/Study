@@ -29,6 +29,8 @@
 
 [ ] Day 20: (next 21 java)
 
+[ ] Day 21: ( 1 to 23 бүгдийг шинэ )
+
 ## Daily Commit Habit
 
 I code and push every day. Follow my journey. 
