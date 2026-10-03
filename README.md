@@ -8,8 +8,9 @@
 -- Currently studying IT
 -- Learning Java, AWS, Git, and CYBER...
 
-## Progress Tracker
 
+## Progress Tracker
+ 
 ### Completed
 
 -[x] Day 1-5: files, Folders, Command Line
