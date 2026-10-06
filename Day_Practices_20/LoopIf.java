@@ -1,5 +1,5 @@
 
-
+/** 1 ээс 10 хүртэлх тэгш тоонууд хэвлэх */
 public class LoopIf {
     public static void main(String[]args) {
         for (int i = 1; i <=19 ; i ++) {
