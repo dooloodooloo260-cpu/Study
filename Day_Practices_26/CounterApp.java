@@ -39,7 +39,7 @@ public class CounterApp {
             Integer.parseInt(resultLabel.getText().replace("Үр дүн: ",""));
 
             int diff = current - num ;
-            resultLabel.setText("Үр дүн: + diff");
+            resultLabel.setText("Үр дүн: " + diff);
         });
 
         frame.add(asklabel);
