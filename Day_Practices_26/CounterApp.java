@@ -25,7 +25,7 @@ public class CounterApp {
         // Текст -> Тоо 
         int current = 
 
-        Integer.parseInt(resultLabel.getText().replace("Үр дүн: ",""));
+        Integer.parseInt(resultLabel.getText().replace("Үр дүн: ", ""));
 
         int sum = current + num;
         resultLabel.setText("Үр дүн: " + sum);
