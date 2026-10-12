@@ -11,6 +11,14 @@ public class Day02Text {
         res = c / b; 
 
         System.out.println("c / b =" + res);
+
+        int index = 7;
+        a = index;
+        b = 2;
+
+        int sum = a + b ;
+
+        System.out.println("c" + sum);
     }
 
 }
