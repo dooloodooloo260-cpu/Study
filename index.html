@@ -3,71 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>website own </title>
-
+    <meta name="description" content="Ken's software development learning journey">
+    <title>Ken's Learning Journey</title>
     <style>
-        h1 {
-            color: blue; 
-            font-size: 40px;
+        :root {
+            color-scheme: dark;
+            --background: #0f172a;
+            --surface: #1e293b;
+            --surface-light: #334155;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-strong: #0ea5e9;
+            --success: #34d399;
         }
-        p {
-            color: darkgreen;
-            font-size: 18px;
-        }
-        h2 {
-           background-color: lightyellow;
-        }
+
+        * { box-sizing: border-box; }
 
         body {
-            font-family: Arial, sans-serif; 
-            margin: 40px;
-            padding-bottom: 10px;
-
+            margin: 0;
+            min-height: 100vh;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at top right, #164e63 0, transparent 35%), var(--background);
+            line-height: 1.6;
         }
 
-        h1 {
-            text-align: center;
-            border-bottom: 3px solid blue; 
-            padding-bottom: 10px;
+        .container { width: min(1040px, 92%); margin: 0 auto; }
+
+        header { padding: 5rem 0 3rem; }
+
+        .eyebrow {
+            margin: 0 0 .75rem;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-size: .8rem;
         }
 
-        h2 {
-            padding: 10px; 
-            border-left: 5px solid orange;
+        h1 { max-width: 700px; margin: 0; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.05; }
+        header p { max-width: 620px; color: var(--muted); font-size: 1.1rem; }
 
+        .actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.5rem; }
+        .button { padding: .75rem 1.1rem; border-radius: .65rem; font-weight: 700; text-decoration: none; }
+        .button-primary { color: #082f49; background: var(--accent); }
+        .button-secondary { color: var(--text); border: 1px solid var(--surface-light); background: var(--surface); }
+        .button:hover { filter: brightness(1.1); }
+
+        .stats, .cards { display: grid; gap: 1rem; }
+        .stats { grid-template-columns: repeat(3, 1fr); margin-bottom: 1rem; }
+        .cards { grid-template-columns: repeat(2, 1fr); padding-bottom: 4rem; }
+        .card, .stat { padding: 1.5rem; border: 1px solid var(--surface-light); border-radius: 1rem; background: color-mix(in srgb, var(--surface) 88%, transparent); }
+        .stat strong { display: block; color: var(--accent); font-size: 2rem; }
+        .stat span, .card p { color: var(--muted); }
+        .card h2 { margin-top: 0; }
+        .card ul { margin-bottom: 0; padding-left: 1.2rem; }
+        .card li::marker { color: var(--success); }
+
+        footer { padding: 1.5rem 0; border-top: 1px solid var(--surface-light); color: var(--muted); font-size: .9rem; }
+
+        @media (max-width: 650px) {
+            header { padding-top: 3rem; }
+            .stats, .cards { grid-template-columns: 1fr; }
         }
-</style>
-
+    </style>
 </head>
 <body>
+    <header class="container">
+        <p class="eyebrow">Learning in public</p>
+        <h1>Ken's software development journey.</h1>
+        <p>Монгол залуугийн 90 өдрийн IT суралцах замнал: Java, web development, Git, AWS болон cybersecurity.</p>
+        <nav class="actions" aria-label="Main navigation">
+            <a class="button button-primary" href="Day_Practices_21/index.html">Open day tracker</a>
+            <a class="button button-secondary" href="README.md">Read project notes</a>
+        </nav>
+    </header>
 
+    <main class="container">
+        <section class="stats" aria-label="Progress summary">
+            <div class="stat"><strong>27</strong><span>Days documented</span></div>
+            <div class="stat"><strong>21</strong><span>Interactive lessons</span></div>
+            <div class="stat"><strong>Java</strong><span>Current focus</span></div>
+        </section>
+
+        <section class="cards">
+            <article class="card">
+                <h2>What I am learning</h2>
+                <p>Алхам бүрээ код, тэмдэглэл, жижиг туршилтаар баталгаажуулж байна.</p>
+                <ul>
+                    <li>Java fundamentals and problem solving</li>
+                    <li>HTML, CSS and interactive pages</li>
+                    <li>Git, GitHub and command-line workflow</li>
+                </ul>
+            </article>
+            <article class="card">
+                <h2>Latest progress</h2>
+                <p>Day 27 хүртэлх Java дасгалууд болон Day 1–21-ийн интерактив тэмдэглэлүүд бэлэн.</p>
+                <ul>
+                    <li>Arrays, loops and conditions</li>
+                    <li>Methods, counters and classes</li>
+                    <li>A clickable tracker for daily notes</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">Built by Ken · Keep learning, keep building.</div>
+    </footer>
 </body>
-
-<h1>Ken's Journey</h1> 
-</html> 
-
-<p>Day 10: Learning HTML</p>
-<p>My goal: become a software developer</p>
-<p> I styled my webpage with CSS.</p>
-<p> The title is centered and blue.</p>
-<p> My progress section has a yellow background. </p>
-<h2>My Progress</h2>
-<ul>
-    <li>Day 1-5: Command Line OK</li>
-    <li>Day 6-7: Git + GitHub OK </li>
-    <li>Day 10: HTML OK</li>
-</ul>
- 
-
-
-
-<button onclick="alert('Day14 done!')"> Mark day 13 Complete. </button>
-
- <p id="day16: Not Completed"</p>
- <button onclick="markDone()">Mark Completed</button>
-
- <script> 
-    function markDone() {
-        document.getElementById('day16').texContent = 'Day14: Completed!';
-    }
- </script>
+</html>

@@ -1,50 +1,47 @@
-# Ken's 180 - Day IT Journey
+# Ken's Learning Journey
 
-**Goal** Become a Software developer in 90 days (compressed plan)
+> A 90-day software development learning journey from Mongolia.
 
-## About Me
+## About
 
--- My name is Ken, From Mongolia
--- Currently studying IT
--- Learning Java, AWS, Git, and CYBER...
+I am learning software development through daily practice. This repository
+contains my Java exercises, web experiments, Git notes, and progress tracker.
 
+## Current focus
 
-## Progress Tracker
- 
-### Completed
+- Java fundamentals: conditions, loops, arrays, methods, and classes
+- HTML and CSS
+- Git and GitHub workflow
+- AWS and cybersecurity fundamentals
 
--[x] Day 1-5: files, Folders, Command Line
+## Progress
 
--[x] Day 6-7: Git + First push to Github
+| Stage | Topics | Status |
+| --- | --- | --- |
+| Days 1–9 | Files, folders, command line, Git, VS Code, Markdown | Complete |
+| Days 10–21 | HTML, CSS, and interactive daily tracker | Complete |
+| Days 22–27 | Java arrays, loops, counters, and classes | In progress |
+| Days 28–90 | Java projects and broader IT skills | Planned |
 
--[x] Day 8: VS Code
+## Open the tracker
 
--[x] Day 9: MarkDown
+Start at the [learning dashboard](index.html), or open the [Day 1–21 tracker](Day_Practices_21/index.html).
 
--[x] Day 10-16
+## Repository structure
 
--[x] Day 17 ( empty )
+```text
+Day_Practices_01–20/  Early command-line and Java practice
+Day_Practices_21/     HTML learning notes and clickable day tracker
+Day_Practices_22–27/  Java practice: arrays, loops, and classes
+Text_check_it/        Small Java experiments
+progress.md           Current learning notes
+```
 
-### In Progress
+## Daily habit
 
-[ ] Day 20: (next 21 java)
+1. Practice one focused concept.
+2. Save a small working example.
+3. Write down what I learned.
+4. Commit the progress with Git.
 
-[ ] Day 21: ( 1 to 23 бүгдийг шинэ )
-
-## Daily Commit Habit
-
-I code and push every day. Follow my journey. 
-
-| гаргах                         | Тэмдэглэгээ |
-| ------------------------------ | ----------- |
-| JDK s                          | ☐           |
-| Grid browser дээр харагдана    | ☐           |
-| Day 1-21 товшоод бүгд нээгдэнэ | ☐           |
-| `main -> main` push            | ☐           |
-
-
-## Connect
-
-- GitHub: i can do it. tulkhuuree
-
-- Gmail: <dooloodooloo26@gmail.com>
+Keep learning, keep building.
