@@ -45,6 +45,6 @@ I code and push every day. Follow my journey.
 
 ## Connect
 
-- GitHub: 
+- GitHub: i can do it. tulkhuuree
 
-- Gmail: dooloodooloo26@gmail.com
+- Gmail: <dooloodooloo26@gmail.com>

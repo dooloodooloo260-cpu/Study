@@ -12,13 +12,17 @@ public class Day02Text {
 
         System.out.println("c / b =" + res);
 
-        int index = 7;
-        a = index;
-        b = 2;
-
         int sum = a + b ;
 
-        System.out.println("c" + sum);
-    }
+        System.out.println("c : " + sum);
+
+        int multi = a * b ;
+
+        System.out.println("D :" + multi);
+
+        int mod = a % b ; 
+
+        System.out.println("a % b" + mod);
+        }
 
 }
