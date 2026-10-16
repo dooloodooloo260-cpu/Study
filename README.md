@@ -37,7 +37,7 @@
 - [Day 1–21: HTML/CSS tracker](Day_Practices_21/index.html)
 - [Java Data Structures & Algorithms хөтөлбөр](JAVA_CURRICULUM.md)
 - `Day_Practices_01`–`Day_Practices_90` хавтас бүрд:
-  - LeetCode-ийн 5 давхцахгүй бодлого (`README.md`)
+  - Монгол зорилго, хэрэглээ, бодох эхлэх чиглэлтэй 5 LeetCode бодлого (`README.md`)
   - Тухайн өдрийн шаталсан Java хичээл (`JAVA_LESSON.md`)
 
 Java хичээлийн түвшнүүд:
@@ -121,7 +121,8 @@ experiments, Git notes, and learning progress materials.
 - [Days 1–21: HTML/CSS tracker](Day_Practices_21/index.html)
 - [Java Data Structures & Algorithms curriculum](JAVA_CURRICULUM.md)
 - Each folder from `Day_Practices_01` through `Day_Practices_90` contains:
-  - Five unique LeetCode problems (`README.md`)
+  - Five unique LeetCode problems with Mongolian goals, practical applications,
+    and starting hints (`README.md`)
   - A Java lesson for that day (`JAVA_LESSON.md`)
 
 Java lesson levels:

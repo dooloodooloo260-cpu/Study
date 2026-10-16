@@ -1,5 +1,5 @@
-s<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="mn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,13 +12,31 @@ s<!DOCTYPE html>
         <header class="tracker-header">
             <p class="eyebrow">Ken's learning journey</p>
             <h1>Daily progress tracker</h1>
-            <p>Day 1–21-ийн тэмдэглэлүүдийг нээгээд тухайн өдрийн сурсан зүйлсээ хараарай.</p>
+            <p>Java суурь хичээл, LeetCode бодлого, интерактив тэмдэглэлүүдээ тус тусад нь сонгоорой.</p>
         </header>
 
-        <section class="tracker-card" aria-labelledby="lessons-title">
+        <section class="tracker-card tracker-category tracker-category--basics" aria-labelledby="basics-title">
             <div class="section-heading">
-                <h2 id="lessons-title">Lessons</h2>
-                <span class="status"><span aria-hidden="true">●</span> Completed</span>
+                <h2 id="basics-title">Java суурь хичээл</h2>
+                <span class="status">90 хичээл</span>
+            </div>
+            <p class="category-description">Өдөр бүрийн Java хичээл болон дасгал.</p>
+            <div class="grid" id="basic-lessons-grid" aria-label="Java суурь хичээлүүд"></div>
+        </section>
+
+        <section class="tracker-card tracker-category tracker-category--leetcode" aria-labelledby="leetcode-title">
+            <div class="section-heading">
+                <h2 id="leetcode-title">LeetCode бодлого</h2>
+                <span class="status">90 өдөр · 450 бодлого</span>
+            </div>
+            <p class="category-description">Өдөр бүрийн таван бодлогын Монгол тайлбар, бодох чиглэл.</p>
+            <div class="grid" id="leetcode-grid" aria-label="LeetCode өдрүүд"></div>
+        </section>
+
+        <section class="tracker-card tracker-category tracker-category--notes" aria-labelledby="notes-title">
+            <div class="section-heading">
+                <h2 id="notes-title">Интерактив тэмдэглэл</h2>
+                <span class="status"><span aria-hidden="true">●</span> 21 тэмдэглэл</span>
             </div>
             <div class="grid">
                 <a href="day1.html" class="day-btn completed">Day 1</a>
@@ -45,5 +63,23 @@ s<!DOCTYPE html>
             </div>
         </section>
     </main>
+    <script>
+        const dayGroups = [
+            { gridId: "basic-lessons-grid", file: "JAVA_LESSON.md" },
+            { gridId: "leetcode-grid", file: "README.md" }
+        ];
+
+        for (const group of dayGroups) {
+            const grid = document.getElementById(group.gridId);
+            for (let day = 1; day <= 90; day += 1) {
+                const dayNumber = String(day).padStart(2, "0");
+                const link = document.createElement("a");
+                link.className = "day-btn";
+                link.href = `../Day_Practices_${dayNumber}/${group.file}`;
+                link.textContent = `Day ${dayNumber}`;
+                grid.append(link);
+            }
+        }
+    </script>
 </body>
 </html>
