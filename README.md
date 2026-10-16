@@ -9,8 +9,7 @@ contains my Java exercises, web experiments, Git notes, and progress tracker.
 
 ## Current focus
 
-- Java fundamentals: conditions, loops, arrays, methods, and classes
-- HTML and CSS
+- Java fundamentals: conditions, loops, arrays, methods, and classes- HTML and CSS
 - Git and GitHub workflow
 - AWS and cybersecurity fundamentals
 
@@ -35,6 +34,11 @@ Day_Practices_21/     HTML learning notes and clickable day tracker
 Day_Practices_22–27/  Java practice: arrays, loops, and classes
 Text_check_it/        Small Java experiments
 progress.md           Current learning notes
+
+Day_Practices_28 : SQL -ээр quiz Data Bank бүтээх
+
+--Энэ өдрийн бүх ажлаа нэг фолдерт цуглуулья - Day 27-ийн QuizData.java array-ыг PostgreSQL Database руу шилжүүлсэн өдөр. 
+
 ```
 
 ## Daily habit
