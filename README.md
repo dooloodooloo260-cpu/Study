@@ -36,6 +36,17 @@ Text_check_it/        Small Java experiments
 progress.md           Current learning notes
 
 Day_Practices_28 : SQL -ээр quiz Data Bank бүтээх
+Day_Practices_01–90 : Өдөр бүр 5 давхцахгүй LeetCode бодлого
+
+[Java-ийн 90 өдрийн шаталсан хөтөлбөр](JAVA_CURRICULUM.md)
+
+## Шалгалт ажиллуулах
+
+90 өдрийн дасгалын жагсаалт болон Day 29-ийн Java шийдлүүдийг шалгах:
+
+```sh
+python3 -m unittest discover -s Day_Practices_all_test -v
+```
 
 --Энэ өдрийн бүх ажлаа нэг фолдерт цуглуулья - Day 27-ийн QuizData.java array-ыг PostgreSQL Database руу шилжүүлсэн өдөр. 
 
