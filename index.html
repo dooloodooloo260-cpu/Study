@@ -52,11 +52,13 @@
         .button:hover { filter: brightness(1.1); }
 
         .stats, .cards { display: grid; gap: 1rem; }
-        .stats { grid-template-columns: repeat(3, 1fr); margin-bottom: 1rem; }
+        .stats { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-bottom: 1rem; }
         .cards { grid-template-columns: repeat(2, 1fr); padding-bottom: 4rem; }
         .card, .stat { padding: 1.5rem; border: 1px solid var(--surface-light); border-radius: 1rem; background: color-mix(in srgb, var(--surface) 88%, transparent); }
         .stat strong { display: block; color: var(--accent); font-size: 2rem; }
         .stat span, .card p { color: var(--muted); }
+        .stat-current { color: inherit; text-decoration: none; }
+        .stat-current:hover, .stat-current:focus-visible { border-color: var(--accent); }
         .card h2 { margin-top: 0; }
         .card ul { margin-bottom: 0; padding-left: 1.2rem; }
         .card li::marker { color: var(--success); }
@@ -82,6 +84,9 @@
 
     <main class="container">
         <section class="stats" aria-label="Progress summary">
+            <a class="stat stat-current" href="Day_Practices_16/JAVA_LESSON.md" aria-label="Одоогийн өдөр: Day 16. Java хичээлийг нээх">
+                <strong>Day 16</strong><span>Одоогийн өдөр · Java хичээлийг нээх</span>
+            </a>
             <div class="stat"><strong>27</strong><span>Days documented</span></div>
             <div class="stat"><strong>21</strong><span>Interactive lessons</span></div>
             <div class="stat"><strong>Java</strong><span>Current focus</span></div>

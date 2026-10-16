@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Mongolian Garuda Club mark</title>
+  <desc id="desc">A refined eye enclosing two intertwined serpents.</desc>
+  <defs>
+    <linearGradient id="gold" x1="12" y1="14" x2="52" y2="50" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5e4b4"/>
+      <stop offset=".5" stop-color="#d5ad63"/>
+      <stop offset="1" stop-color="#a87932"/>
+    </linearGradient>
+    <linearGradient id="vermilion" x1="19" y1="23" x2="46" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#e37d68"/>
+      <stop offset="1" stop-color="#9f3940"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30.5" fill="#101b2a"/>
+  <circle cx="32" cy="32" r="28.5" fill="none" stroke="url(#gold)" stroke-width="1"/>
+  <path
+    d="M8.5 32c6.4-9.1 14.2-13.7 23.5-13.7S49.1 22.9 55.5 32c-6.4 9.1-14.2 13.7-23.5 13.7S14.9 41.1 8.5 32Z"
+    fill="none"
+    stroke="url(#gold)"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-width="1.8"
+  />
+  <path
+    d="M19 32c0-7.5 8.1-10.5 13-1.2 4.9 9.3 13 6.3 13-1.2"
+    fill="none"
+    stroke="url(#gold)"
+    stroke-linecap="round"
+    stroke-width="3.4"
+  />
+  <path
+    d="M45 32c0 7.5-8.1 10.5-13 1.2-4.9-9.3-13-6.3-13 1.2"
+    fill="none"
+    stroke="url(#vermilion)"
+    stroke-linecap="round"
+    stroke-width="3.4"
+  />
+  <path d="m17.6 28.4 3.4 1.7-3.4 2.2-1.8-2Z" fill="#d5ad63"/>
+  <path d="m46.4 35.6-3.4-1.7 3.4-2.2 1.8 2Z" fill="#d87561"/>
+  <circle cx="18" cy="29.9" r=".65" fill="#101b2a"/>
+  <circle cx="46" cy="34.1" r=".65" fill="#101b2a"/>
+  <circle cx="32" cy="32" r="1.1" fill="#f5e4b4"/>
+</svg>

@@ -1,7 +1,10 @@
 import java.util.Arrays;
 
 public class Day29AlgorithmAssertions {
-    public static void main(String[] args) {
+    /**
+ * @param args
+ */
+public static void main(String[] args) {
         check(Arrays.equals(
                         TwoSum.twoSum(new int[] { 3, 3 }, 6),
                         new int[] { 0, 1 }),

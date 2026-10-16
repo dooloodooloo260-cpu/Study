@@ -57,7 +57,7 @@ class AllDaysStructureTests(unittest.TestCase):
                 lines = text.splitlines()
 
                 self.assertTrue(
-                    lines and lines[0] == f"# Day {day:02d}: LeetCode practice",
+                    lines and lines[0] == f"# Day {day:02d}: LeetCode бодлого",
                     f"{readme.relative_to(ROOT)}: эхний мөрийн гарчиг буруу",
                 )
 
@@ -121,6 +121,13 @@ class AllDaysStructureTests(unittest.TestCase):
                     len(set(day_numbers)),
                     f"{readme.relative_to(ROOT)}: нэг өдрийн бодлогууд давхардсан",
                 )
+                for label in ("Зорилго", "Хэрэглээ", "Бодох чиглэл"):
+                    self.assertEqual(
+                        PROBLEMS_PER_DAY,
+                        sum(f"**{label}:**" in line for line in lines),
+                        f"{readme.relative_to(ROOT)}: бүх бодлогод "
+                        f"Монгол {label} байх ёстой",
+                    )
 
     def test_java_curriculum_has_90_ordered_lessons_at_balanced_levels(self):
         self.assertEqual(DAY_COUNT, len(LESSONS), "Java хичээл яг 90 байх ёстой")
