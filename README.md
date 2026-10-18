@@ -36,6 +36,7 @@
 - [Суралцах dashboard](index.html)
 - [Day 1–21: HTML/CSS tracker](Day_Practices_21/index.html)
 - [Java Data Structures & Algorithms хөтөлбөр](JAVA_CURRICULUM.md)
+- [Монгол хэл дээрх DSA 90 өдрийн тусдаа хөтөлбөр](Mongolian/DSA_90_DAY_CURRICULUM.md)
 - `Day_Practices_01`–`Day_Practices_90` хавтас бүрд:
   - Монгол зорилго, хэрэглээ, бодох эхлэх чиглэлтэй 5 LeetCode бодлого (`README.md`)
   - Тухайн өдрийн шаталсан Java хичээл (`JAVA_LESSON.md`)
@@ -120,6 +121,7 @@ experiments, Git notes, and learning progress materials.
 - [Learning dashboard](index.html)
 - [Days 1–21: HTML/CSS tracker](Day_Practices_21/index.html)
 - [Java Data Structures & Algorithms curriculum](JAVA_CURRICULUM.md)
+- [Separate 90-day DSA curriculum in Mongolian](Mongolian/DSA_90_DAY_CURRICULUM.md)
 - Each folder from `Day_Practices_01` through `Day_Practices_90` contains:
   - Five unique LeetCode problems with Mongolian goals, practical applications,
     and starting hints (`README.md`)
