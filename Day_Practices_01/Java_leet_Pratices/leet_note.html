@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Zigzag Conversion Java кодын Монгол тайлбар, сурах зөвлөмж">
+  <title>leet.java кодын тайлбар</title>
+  <style>
+    :root { color-scheme: light; --page: #f3f6fb; --paper: #fff; --ink: #243247; --muted: #6b7890; --blue: #155eef; --purple: #7047eb; --teal: #087e75; --line: #e1e7f0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 2rem 1rem; background: var(--page); color: var(--ink); font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { max-width: 980px; margin: 0 auto; padding: clamp(1.25rem, 4vw, 3rem); border: 1px solid var(--line); border-radius: 18px; background: var(--paper); box-shadow: 0 12px 36px #20305012; }
+    .intro { margin: 0 0 1.5rem; color: var(--muted); }
+    pre { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; font: 0.96rem/1.72 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .line { display: inline; }
+    .title { color: var(--blue); font-weight: 800; font-size: 1.45rem; }
+    .section { color: var(--purple); font-weight: 750; }
+    .accent { color: var(--teal); font-weight: 700; }
+    .code { color: #a13b0b; }
+    @media (max-width: 600px) { body { padding: .5rem; } main { padding: 1rem; border-radius: 12px; } pre { font-size: .88rem; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="intro">Энэ нь <a href="leet_note.txt">leet_note.txt</a> файлын өнгөөр ялгасан HTML хуулбар юм.</p>
+    <pre><span class="line title">leet.java КОДЫН ТАЙЛБАР</span>
+<span class="line">=======================</span>
+<span class="line"></span>
+<span class="line">Энэ програм Zigzag Conversion бодлогыг шийднэ. Өгсөн тэмдэгт мөрийн үсгүүдийг</span>
+<span class="line">тодорхой тооны мөрөөр доош, дараа нь дээш чиглэн зигзаг хэлбэрээр байрлуулж,</span>
+<span class="line">мөр бүрийг дээрээс доош залгаад буцаана.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">1. JAVA ТЭМДЭГЛЭГЭЭ БА ТҮЛХҮҮР ҮГС</span>
+<span class="line">----------------------------------</span>
+<span class="line"></span>
+<span class="line">package</span>
+<span class="line">    Класс аль багцад хамаарахыг зарлана. Энэ файл</span>
+<span class="line">    Day_Practices_01.Java_leet_Pratices багцад байна.</span>
+<span class="line"></span>
+<span class="line">public</span>
+<span class="line">    Класс эсвэл method-ийг бусад классаас ашиглах боломжтой болгоно.</span>
+<span class="line"></span>
+<span class="line">class</span>
+<span class="line">    Java класс зарлана. Энэ жишээнд leet класс үүсгэж байна.</span>
+<span class="line"></span>
+<span class="line">static</span>
+<span class="line">    Method-ийг leet объект үүсгэлгүйгээр дуудаж болно.</span>
+<span class="line"></span>
+<span class="line">String</span>
+<span class="line">    Тэмдэгт мөрийн төрөл.</span>
+<span class="line"></span>
+<span class="line">int</span>
+<span class="line">    Бүхэл тоон төрөл.</span>
+<span class="line"></span>
+<span class="line">void</span>
+<span class="line">    Method утга буцаахгүй гэсэн үг. main method үр дүн буцаахгүй.</span>
+<span class="line"></span>
+<span class="line">return</span>
+<span class="line">    Method-оос утга буцааж, method-ийн ажиллагааг дуусгана.</span>
+<span class="line"></span>
+<span class="line">new</span>
+<span class="line">    Шинэ объект эсвэл массив үүсгэнэ.</span>
+<span class="line"></span>
+<span class="line">if</span>
+<span class="line">    Нөхцөл үнэн үед код ажиллуулна.</span>
+<span class="line"></span>
+<span class="line">else if</span>
+<span class="line">    Өмнөх if нөхцөл худал үед дараагийн нөхцөлийг шалгана.</span>
+<span class="line"></span>
+<span class="line">for</span>
+<span class="line">    Заасан нөхцөл биелж байх үед кодыг давтан ажиллуулна.</span>
+<span class="line"></span>
+<span class="line">null</span>
+<span class="line">    Объектын утга байхгүйг илэрхийлнэ.</span>
+<span class="line"></span>
+<span class="line">Хаалт, цэг тэмдэг:</span>
+<span class="line"></span>
+<span class="line">    ;      Нэг Java заавар дууссаныг тэмдэглэнэ.</span>
+<span class="line">    {}     Класс, method, давталт, нөхцөлийн кодын хэсгийг хүрээлнэ.</span>
+<span class="line">    ()     Method-ийн параметр, аргумент эсвэл нөхцөлийг хүрээлнэ.</span>
+<span class="line">    []     Массивын төрлийг зарлах эсвэл индексээр элементэд хандана.</span>
+<span class="line">    .      Объект эсвэл классын method, талбарт хандана. Жишээ: s.length()</span>
+<span class="line">    ,      Method-ийн аргумент эсвэл параметрүүдийг тусгаарлана.</span>
+<span class="line">    &quot; &quot;    String утгын эхлэл ба төгсгөлийг тэмдэглэнэ.</span>
+<span class="line">    :      Enhanced for давталтад массивын элементийг ээлжлэн авна.</span>
+<span class="line"></span>
+<span class="line">Операторууд:</span>
+<span class="line"></span>
+<span class="line">    =      Хувьсагчид утга онооно.</span>
+<span class="line">    ==     Хоёр утга тэнцүү эсэхийг шалгана.</span>
+<span class="line">    !=     Хоёр утга ялгаатай эсэхийг шалгана.</span>
+<span class="line">    ||     &quot;Эсвэл&quot;: нөхцөлүүдийн аль нэг нь үнэн бол нийт нөхцөл үнэн болно.</span>
+<span class="line">    &lt;      Зүүн талын утга баруун талынхаас бага эсэхийг шалгана.</span>
+<span class="line">    &lt;=     Бага эсвэл тэнцүү эсэхийг шалгана.</span>
+<span class="line">    &gt;=     Их эсвэл тэнцүү эсэхийг шалгана.</span>
+<span class="line">    ++     Тоон хувьсагчийг нэгээр нэмнэ. i++ нь i = i + 1-тэй адил.</span>
+<span class="line">    +=     Нэмж, үр дүнг тухайн хувьсагчид хадгална.</span>
+<span class="line code">           row += direction нь row = row + direction-тэй адил.</span>
+<span class="line">    -      Хасах үйлдэл. numRows - 1 нь сүүлийн мөрийн индекс.</span>
+<span class="line">    -1     Сөрөг нэг. Энэ кодод нэг мөр дээш шилжих чиглэлийг заана.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">2. БАГЦ БА КЛАСС</span>
+<span class="line">----------------</span>
+<span class="line"></span>
+<span class="line">Код:</span>
+<span class="line code">    package Day_Practices_01.Java_leet_Pratices;</span>
+<span class="line"></span>
+<span class="line code">    public class leet {</span>
+<span class="line"></span>
+<span class="line">Тайлбар:</span>
+<span class="line code">    package мөр нь файлыг нэрлэсэн багцад байрлуулна. Java-д том, жижиг</span>
+<span class="line">    үсгийг ялгадаг тул package-ийн нэрийг яг зөв бичих хэрэгтэй.</span>
+<span class="line"></span>
+<span class="line code">    public class leet нь leet нэртэй, бусад классаас хандаж болох класс</span>
+<span class="line">    зарлаж байна.</span>
+<span class="line"></span>
+<span class="line">    { нь классын код эхэлж байгааг заана. Классын төгсгөлийн } түүнийг хаана.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">3. convert METHOD</span>
+<span class="line">-----------------</span>
+<span class="line"></span>
+<span class="line">Код:</span>
+<span class="line code">    public static String convert(String s, int numRows) {</span>
+<span class="line"></span>
+<span class="line">Тайлбар:</span>
+<span class="line code">    public</span>
+<span class="line">        Энэ method-ийг өөр классаас дуудаж болно.</span>
+<span class="line code">    static</span>
+<span class="line">        leet объект үүсгэлгүйгээр leet.convert(...) гэж дуудаж болно.</span>
+<span class="line code">    String</span>
+<span class="line">        Method String төрлийн утга буцаана.</span>
+<span class="line code">    convert</span>
+<span class="line">        Method-ийн нэр.</span>
+<span class="line code">    String s</span>
+<span class="line">        Хувиргах эх тэмдэгт мөр.</span>
+<span class="line code">    int numRows</span>
+<span class="line">        Зигзагт ашиглах мөрийн тоо.</span>
+<span class="line">    {</span>
+<span class="line">        Method-ийн биелүүлэх код эхэлнэ.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">4. ХУВИРГАХ ШААРДЛАГАГҮЙ ОРОЛТ</span>
+<span class="line">-----------------------------</span>
+<span class="line"></span>
+<span class="line">Код:</span>
+<span class="line code">    if (s == null || s.isEmpty() || numRows &lt;= 1 || numRows &gt;= s.length()) {</span>
+<span class="line code">        return s;</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">Нөхцөлүүдийг зүүнээс баруун тийш || буюу &quot;эсвэл&quot; холбоно. Аль нэг нөхцөл</span>
+<span class="line">үнэн бол эх мөрийг өөрчлөлгүй буцаана:</span>
+<span class="line"></span>
+<span class="line code">    s == null</span>
+<span class="line">        Эх тэмдэгт мөр өгөгдөөгүй.</span>
+<span class="line code">    s.isEmpty()</span>
+<span class="line">        Эх мөр хоосон.</span>
+<span class="line code">    numRows &lt;= 1</span>
+<span class="line">        Нэг эсвэл түүнээс цөөн мөр хүссэн тул зигзаг үүсэхгүй.</span>
+<span class="line code">    numRows &gt;= s.length()</span>
+<span class="line">        Мөрийн тоо тэмдэгтийн тооноос багагүй тул тэмдэгт бүр өөрийн мөрөнд</span>
+<span class="line">        орно. Дахин байрлуулах шаардлагагүй.</span>
+<span class="line"></span>
+<span class="line">return s нь өгсөн мөрийг буцааж, convert method-ийг дуусгана.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">5. МӨР БҮРД StringBuilder БЭЛДЭХ</span>
+<span class="line">--------------------------------</span>
+<span class="line"></span>
+<span class="line">Код:</span>
+<span class="line code">    StringBuilder[] rows = new StringBuilder[numRows];</span>
+<span class="line code">    for (int i = 0; i &lt; numRows; i++) {</span>
+<span class="line code">        rows[i] = new StringBuilder();</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">Тайлбар:</span>
+<span class="line code">    StringBuilder[]</span>
+<span class="line code">        StringBuilder объект хадгалах массивын төрөл.</span>
+<span class="line code">    new StringBuilder[numRows]</span>
+<span class="line code">        numRows байрлалтай массив үүсгэнэ. Энэ үед байрлал бүрд</span>
+<span class="line code">        StringBuilder объект хараахан үүсээгүй.</span>
+<span class="line code">    for (int i = 0; i &lt; numRows; i++)</span>
+<span class="line code">        i хувьсагч 0-ээс эхэлнэ. i &lt; numRows байх бүрд давталт ажиллана.</span>
+<span class="line">        Давталт бүрийн дараа i++ нь i-г нэгээр нэмнэ.</span>
+<span class="line code">    rows[i]</span>
+<span class="line code">        rows массивын i индекстэй байрлал. Java массивын индекс 0-ээс эхэлдэг.</span>
+<span class="line code">    new StringBuilder()</span>
+<span class="line">        Тухайн мөрийн тэмдэгтүүдийг залгах хоосон сав үүсгэнэ.</span>
+<span class="line"></span>
+<span class="line">Ингэснээр зигзагийн мөр бүрд тусдаа StringBuilder бэлэн болно.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">6. ОДООГИЙН МӨР БА ЧИГЛЭЛ</span>
+<span class="line">-------------------------</span>
+<span class="line"></span>
+<span class="line">Код:</span>
+<span class="line code">    int row = 0;</span>
+<span class="line code">    int direction = 1;</span>
+<span class="line"></span>
+<span class="line">Тайлбар:</span>
+<span class="line code">    row</span>
+<span class="line">        Дараагийн тэмдэгтийг аль мөрөнд бичихийг заана. Эхний мөрийн индекс 0.</span>
+<span class="line code">    direction</span>
+<span class="line">        Дараагийн алхамд хэдээр хөдлөхийг заана:</span>
+<span class="line">            1  = нэг мөр доош</span>
+<span class="line">           -1  = нэг мөр дээш</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">7. ТЭМДЭГТҮҮДИЙГ ЗИГЗАГ МӨРҮҮДЭД ХУВААРИЛАХ</span>
+<span class="line">-------------------------------------------</span>
+<span class="line"></span>
+<span class="line">Код:</span>
+<span class="line code">    for (int i = 0; i &lt; s.length(); i++) {</span>
+<span class="line code">        rows[row].append(s.charAt(i));</span>
+<span class="line"></span>
+<span class="line code">        if (row == 0) {</span>
+<span class="line code">            direction = 1;</span>
+<span class="line">        } else if (row == numRows - 1) {</span>
+<span class="line code">            direction = -1;</span>
+<span class="line">        }</span>
+<span class="line"></span>
+<span class="line code">        row += direction;</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">Тайлбар:</span>
+<span class="line code">    s.length()</span>
+<span class="line">        Эх мөрийн тэмдэгтийн тоог өгнө.</span>
+<span class="line code">    i</span>
+<span class="line">        0-ээс эхлээд тэмдэгт бүрийн индекс болно.</span>
+<span class="line code">    s.charAt(i)</span>
+<span class="line">        Эх мөрийн i индекст байгаа тэмдэгтийг авна.</span>
+<span class="line code">    rows[row]</span>
+<span class="line">        Одоогоор бичиж буй мөрийн StringBuilder.</span>
+<span class="line">    .append(...)</span>
+<span class="line">        Тэмдэгтийг тухайн мөрийн төгсгөлд залгана.</span>
+<span class="line code">    row == 0</span>
+<span class="line">        Эхний мөрөнд хүрсэн эсэхийг шалгана. Хүрсэн бол доош явах чиглэл</span>
+<span class="line">        тогтоож direction = 1 болгоно.</span>
+<span class="line code">    row == numRows - 1</span>
+<span class="line">        Хамгийн сүүлийн мөрөнд хүрсэн эсэхийг шалгана. Индекс 0-ээс эхэлдэг</span>
+<span class="line">        тул сүүлийн мөрийн индекс numRows - 1 байна. Хүрсэн бол дээш явах</span>
+<span class="line">        чиглэл тогтоож direction = -1 болгоно.</span>
+<span class="line code">    row += direction</span>
+<span class="line">        Дараагийн тэмдэгт орох мөрийн дугаарыг шинэчилнэ.</span>
+<span class="line"></span>
+<span class="line">3 мөртэй үед мөрийн индексүүд ийм дарааллаар явна:</span>
+<span class="line"></span>
+<span class="line">    0 -&gt; 1 -&gt; 2 -&gt; 1 -&gt; 0 -&gt; 1 -&gt; 2 -&gt; ...</span>
+<span class="line"></span>
+<span class="line">PAYPALISHIRING мөрийг 3 мөрөөр байрлуулбал:</span>
+<span class="line"></span>
+<span class="line">    P   A   H   N</span>
+<span class="line">    A P L S I I G</span>
+<span class="line">    Y   I   R</span>
+<span class="line"></span>
+<span class="line">Зайнууд зөвхөн зигзагийг харуулахын тулд тавигдсан. Код зай нэмэхгүй.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">8. МӨРҮҮДИЙГ НЭГ ҮР ДҮН БОЛГОХ</span>
+<span class="line">-------------------------------</span>
+<span class="line"></span>
+<span class="line">Код:</span>
+<span class="line code">    StringBuilder result = new StringBuilder();</span>
+<span class="line code">    for (StringBuilder currentRow : rows) {</span>
+<span class="line code">        result.append(currentRow);</span>
+<span class="line">    }</span>
+<span class="line code">    return result.toString();</span>
+<span class="line"></span>
+<span class="line">Тайлбар:</span>
+<span class="line code">    result</span>
+<span class="line">        Эцсийн хариуг залгаж цуглуулах хоосон StringBuilder.</span>
+<span class="line code">    for (StringBuilder currentRow : rows)</span>
+<span class="line code">        rows массивын мөр бүрийг дарааллаар нь currentRow хувьсагчид авна.</span>
+<span class="line">        : тэмдэгтийн баруун талд давтах массив, зүүн талд элементийн төрөл</span>
+<span class="line">        болон тухайн элементийг хадгалах хувьсагч байна.</span>
+<span class="line code">    result.append(currentRow)</span>
+<span class="line">        Тухайн мөрийн тэмдэгтүүдийг эцсийн үр дүнд залгана.</span>
+<span class="line">    toString()</span>
+<span class="line code">        StringBuilder-ийн агуулгыг String төрөл болгон буцаана.</span>
+<span class="line code">    return</span>
+<span class="line">        Бэлэн болсон String үр дүнг convert method-оос буцаана.</span>
+<span class="line"></span>
+<span class="line">3 мөртэй жишээнд мөрүүдийн агуулга:</span>
+<span class="line">    Эхний мөр:   PAHN</span>
+<span class="line">    Хоёр дахь:   APLSIIG</span>
+<span class="line">    Гурав дахь:  YIR</span>
+<span class="line"></span>
+<span class="line">Нэгтгэсэн хариу: PAHNAPLSIIGYIR</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">9. main METHOD БА ЖИШЭЭ ДУУДАЛТ</span>
+<span class="line">--------------------------------</span>
+<span class="line"></span>
+<span class="line">Код:</span>
+<span class="line code">    public static void main(String[] args) {</span>
+<span class="line code">        System.out.println(convert(&quot;PAYPALISHIRING&quot;, 3));</span>
+<span class="line code">        System.out.println(convert(&quot;PAYPALISHIRING&quot;, 4));</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">Тайлбар:</span>
+<span class="line code">    main</span>
+<span class="line">        Java программын эхлэх цэг. JVM энэ method-ийг ажиллуулж эхэлнэ.</span>
+<span class="line code">    String[] args</span>
+<span class="line">        Командын мөрөөс өгч болох аргументуудын массив. Энэ жишээнд ашиглахгүй.</span>
+<span class="line code">    System.out.println(...)</span>
+<span class="line">        Үр дүнг терминалд хэвлээд дараагийн мөр рүү шилжинэ.</span>
+<span class="line code">    convert(&quot;PAYPALISHIRING&quot;, 3)</span>
+<span class="line">        Эх мөрийг 3 мөрийн зигзаг болгон хувиргана.</span>
+<span class="line code">    convert(&quot;PAYPALISHIRING&quot;, 4)</span>
+<span class="line">        Эх мөрийг 4 мөрийн зигзаг болгон хувиргана.</span>
+<span class="line">    Таслал</span>
+<span class="line">        Эх мөр болон мөрийн тоо гэсэн аргументуудыг тусгаарлана.</span>
+<span class="line">    Давхар хашилт</span>
+<span class="line code">        String утгыг эхлүүлж, төгсгөнө.</span>
+<span class="line"></span>
+<span class="line accent">Хүлээгдэх гаралт:</span>
+<span class="line"></span>
+<span class="line code">    PAHNAPLSIIGYIR</span>
+<span class="line code">    PINALSIGYAHRPI</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">10. ХУГАЦАА БА САНАХ ОЙ</span>
+<span class="line">-----------------------</span>
+<span class="line"></span>
+<span class="line">Эх мөрийн уртыг n, мөрийн тоог r гэе.</span>
+<span class="line"></span>
+<span class="line">    Хугацаа: O(n + r)</span>
+<span class="line">        Тэмдэгт бүрийг нэг удаа мөрөнд хийж, мөрүүдийг нийлүүлнэ.</span>
+<span class="line"></span>
+<span class="line">    Нэмэлт санах ой: O(n + r)</span>
+<span class="line code">        rows массивт r мөр, үр дүнд n хүртэл тэмдэгт хадгална.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">11. ПРОГРАМЫГ АЖИЛЛУУЛАХ</span>
+<span class="line">------------------------</span>
+<span class="line"></span>
+<span class="line">Repository-ийн үндсэн хавтаснаас дараах командыг ажиллуулна:</span>
+<span class="line"></span>
+<span class="line">    mkdir -p /tmp/leet-java-build</span>
+<span class="line">    javac -d /tmp/leet-java-build Day_Practices_01/Java_leet_Pratices/leet.java</span>
+<span class="line">    java -cp /tmp/leet-java-build Day_Practices_01.Java_leet_Pratices.leet</span>
+<span class="line"></span>
+<span class="line">-d нь үүссэн .class файлуудыг хаана хадгалахыг заана.</span>
+<span class="line">-cp нь class файлуудыг хаанаас хайхыг Java runtime-д хэлнэ.</span>
+<span class="line">Package-тай class ажиллуулахдаа бүтэн package болон class нэрийг цэгээр холбоно.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">12. ЭНЭ КОДЫГ ӨӨРӨӨ БИЧИЖ, АШИГЛАХАД ЮУ МЭДЭХ ХЭРЭГТЭЙ ВЭ?</span>
+<span class="line">---------------------------------------------------------------</span>
+<span class="line"></span>
+<span class="line">Энэ кодыг ойлгохын тулд Java-г бүхэлд нь мэддэг байх шаардлагагүй. Доорх</span>
+<span class="line">ойлголтуудыг дарааллаар нь үзвэл кодыг уншиж, өөрчилж, өөрөө бичихэд хангалттай.</span>
+<span class="line"></span>
+<span class="line">1) Java-ийн үндсэн бичиглэл</span>
+<span class="line"></span>
+<span class="line code">    class</span>
+<span class="line">        Кодоо класс дотор бичдэг.</span>
+<span class="line code">    main method</span>
+<span class="line">        Програмыг хаанаас эхлүүлэхийг Java-д заана.</span>
+<span class="line">    {}</span>
+<span class="line">        Кодын хэсгийг эхлүүлж, дуусгана.</span>
+<span class="line">    ;</span>
+<span class="line">        Ихэнх Java зааврын төгсгөлийг тэмдэглэнэ.</span>
+<span class="line">    Том, жижиг үсэг</span>
+<span class="line">        Java үсгийн том, жижиг бичлэгийг ялгана. String ба string өөр нэр.</span>
+<span class="line"></span>
+<span class="line">2) Хувьсагч ба төрөл</span>
+<span class="line"></span>
+<span class="line">Энэ кодод:</span>
+<span class="line"></span>
+<span class="line code">    String s</span>
+<span class="line">        Хувиргах текстийг хадгална.</span>
+<span class="line code">    int numRows</span>
+<span class="line">        Zigzag-д ашиглах мөрийн тоог хадгална.</span>
+<span class="line code">    int i</span>
+<span class="line">        Давталтын тоолуур буюу тэмдэгтийн индекс.</span>
+<span class="line code">    int row</span>
+<span class="line">        Одоогийн мөрийн индекс.</span>
+<span class="line code">    int direction</span>
+<span class="line">        Дараагийн алхамд дээш эсвэл доош явах чиглэл.</span>
+<span class="line"></span>
+<span class="line">Хувьсагчид төрөл оноож зарладаг, дараа нь утга оноодог гэдгийг ойлгоно:</span>
+<span class="line"></span>
+<span class="line code">    int row = 0;</span>
+<span class="line code">    row = row + 1;</span>
+<span class="line"></span>
+<span class="line">3) Нөхцөл ба boolean шалгалт</span>
+<span class="line"></span>
+<span class="line">if, else if, true/false утгыг ойлгох шаардлагатай. Дараах операторууд чухал:</span>
+<span class="line"></span>
+<span class="line">    ==      тэнцүү эсэх</span>
+<span class="line">    !=      ялгаатай эсэх</span>
+<span class="line">    &lt;       бага эсэх</span>
+<span class="line">    &lt;=      бага эсвэл тэнцүү эсэх</span>
+<span class="line">    &gt;=      их эсвэл тэнцүү эсэх</span>
+<span class="line">    ||      эсвэл</span>
+<span class="line"></span>
+<span class="line">Жишээ:</span>
+<span class="line"></span>
+<span class="line code">    if (numRows &lt;= 1) {</span>
+<span class="line code">        return s;</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">Энэ нь мөрийн тоо нэг эсвэл түүнээс бага бол эх текстийг шууд буцаа гэсэн үг.</span>
+<span class="line"></span>
+<span class="line">4) Давталт ба индекс</span>
+<span class="line"></span>
+<span class="line">for давталт хэрхэн эхэлж, ямар нөхцөлд үргэлжилж, алхам бүрд тоолуураа</span>
+<span class="line">өөрчилдгийг мэднэ:</span>
+<span class="line"></span>
+<span class="line code">    for (int i = 0; i &lt; s.length(); i++) {</span>
+<span class="line">        // i нь 0, 1, 2, ... гэсэн индексүүдээр өснө.</span>
+<span class="line">    }</span>
+<span class="line"></span>
+<span class="line">Java-ийн String болон массивын индекс 0-ээс эхэлнэ. Жишээ нь &quot;ABC&quot; мөрөнд:</span>
+<span class="line"></span>
+<span class="line">    индекс:   0  1  2</span>
+<span class="line">    тэмдэгт:  A  B  C</span>
+<span class="line"></span>
+<span class="line">s.charAt(i) нь i индекс дээрх нэг тэмдэгтийг авна. Хүчинтэй индекс нь 0-ээс</span>
+<span class="line">s.length() - 1 хүртэл байна.</span>
+<span class="line"></span>
+<span class="line">5) Массив</span>
+<span class="line"></span>
+<span class="line">Массив нь ижил төрлийн олон утгыг дараалсан индексээр хадгалдаг бүтэц. Энэ</span>
+<span class="line">кодын StringBuilder[] rows нь мөр бүрийн текстийг хадгалах массив.</span>
+<span class="line"></span>
+<span class="line code">    StringBuilder[] rows = new StringBuilder[numRows];</span>
+<span class="line code">    rows[0] = new StringBuilder();</span>
+<span class="line"></span>
+<span class="line">Массив үүсгэх нь доторх бүх объектыг автоматаар үүсгэхгүй. Тиймээс код</span>
+<span class="line">давталтаар rows-ийн байрлал бүрд new StringBuilder() үүсгэж өгдөг.</span>
+<span class="line"></span>
+<span class="line">6) Method ба аргумент</span>
+<span class="line"></span>
+<span class="line">Method нь нэртэй, дахин дуудаж ашиглаж болох кодын хэсэг. convert method хоёр</span>
+<span class="line">аргумент авна:</span>
+<span class="line"></span>
+<span class="line code">    convert(&quot;PAYPALISHIRING&quot;, 3)</span>
+<span class="line"></span>
+<span class="line">Энд эхний аргумент нь текст, хоёр дахь аргумент нь мөрийн тоо. Method-ийн</span>
+<span class="line">буцаах төрөл String тул үр дүн нь тэмдэгт мөр байна. return нь тэр үр дүнг</span>
+<span class="line">дуудсан хэсэгт буцаана.</span>
+<span class="line"></span>
+<span class="line">7) String ба StringBuilder</span>
+<span class="line"></span>
+<span class="line">String нь текст хадгална. charAt(i) нэг тэмдэгт уншиж, length() тэмдэгтийн</span>
+<span class="line">тоог өгнө. StringBuilder нь текстийг хэсэг хэсгээр нь үр дүнтэй залгахад</span>
+<span class="line">хэрэглэгдэнэ:</span>
+<span class="line"></span>
+<span class="line code">    StringBuilder rowText = new StringBuilder();</span>
+<span class="line code">    rowText.append(&#x27;P&#x27;);</span>
+<span class="line code">    String answer = rowText.toString();</span>
+<span class="line"></span>
+<span class="line">append нь төгсгөлд нэмнэ. toString() нь StringBuilder доторх текстийг String</span>
+<span class="line">болгон авна.</span>
+<span class="line"></span>
+<span class="line">8) Алгоритмыг гараар мөрдөх</span>
+<span class="line"></span>
+<span class="line">Код бичихээс өмнө &quot;PAYPALISHIRING&quot; текстийг 3 мөрөөр өөрөө байрлуулж үз:</span>
+<span class="line"></span>
+<span class="line">    P   A   H   N</span>
+<span class="line">    A P L S I I G</span>
+<span class="line">    Y   I   R</span>
+<span class="line"></span>
+<span class="line">Үсэг бүрийн дараа row болон direction-ийн утга яаж өөрчлөгдөхийг мөрдөхөд</span>
+<span class="line">зигзагийн логик ойлгомжтой болно:</span>
+<span class="line"></span>
+<span class="line">    мөрийн индекс: 0 -&gt; 1 -&gt; 2 -&gt; 1 -&gt; 0 -&gt; ...</span>
+<span class="line">    чиглэл:        доош     дээш     доош</span>
+<span class="line"></span>
+<span class="line">Энд 0 нь эхний мөр, numRows - 1 нь сүүлийн мөр гэдгийг санаарай.</span>
+<span class="line"></span>
+<span class="line">9) Алдаатай болон захын оролт</span>
+<span class="line"></span>
+<span class="line">Бодит код бичихдээ зөвхөн энгийн жишээг биш дараах тохиолдлыг ч шалгана:</span>
+<span class="line"></span>
+<span class="line code">    null текст</span>
+<span class="line">    хоосон текст</span>
+<span class="line">    нэг мөр хүссэн оролт</span>
+<span class="line">    мөрийн тоо текстийн урттай тэнцүү эсвэл түүнээс их байх</span>
+<span class="line">    давтагдсан тэмдэгттэй текст</span>
+<span class="line"></span>
+<span class="line">Энэ кодын эхний if нь хувиргалт шаардлагагүй тохиолдлыг эрт буцааж,</span>
+<span class="line">массивын индекс хязгаараас гарахаас хамгаалдаг.</span>
+<span class="line"></span>
+<span class="line">10) Компайл хийх ба ажиллуулах</span>
+<span class="line"></span>
+<span class="line">JDK суусан байх хэрэгтэй. Package зарласан Java файлыг ажиллуулахдаа эх</span>
+<span class="line">кодын замыг зөв зааж хөрвүүлээд, package болон class-ийн бүтэн нэрээр</span>
+<span class="line">ажиллуулна. Энэ тэмдэглэлийн 11-р хэсэгт ашиглах командууд бий.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">СУРАХЫГ ЗӨВЛӨХ ДАРААЛАЛ</span>
+<span class="line">-----------------------</span>
+<span class="line"></span>
+<span class="line section">    1. class, main, println, хаалт ба цэг таслал</span>
+<span class="line section">    2. String, int хувьсагч, утга оноох</span>
+<span class="line section">    3. if, else if болон харьцуулах операторууд</span>
+<span class="line section">    4. for давталт, тоолуур, 0-ээс эхлэх индекс</span>
+<span class="line section">    5. String.length() ба String.charAt(index)</span>
+<span class="line section">    6. массив үүсгэх, индексээр элемент унших/өөрчлөх</span>
+<span class="line section">    7. method, параметр, аргумент, return</span>
+<span class="line section">    8. StringBuilder, append(), toString()</span>
+<span class="line section">    9. кодыг гараар мөрдөх, захын оролтыг тестлэх</span>
+<span class="line section">    10. javac-аар хөрвүүлэх, java командаар ажиллуулах</span>
+<span class="line"></span>
+<span class="line">Өөрөө бичихээсээ өмнө дээрх алхам бүрийг жижиг жишээгээр туршаарай. Харин</span>
+<span class="line">кодыг зөвхөн ажиллуулахын тулд эдгээрийг бүгдийг урьдчилан бүрэн эзэмших</span>
+<span class="line">шаардлагагүй: эхлээд ажиллуулаад, дараа нь нэг нэг хэсгийг нь ойлгон өөрчилж</span>
+<span class="line">болно.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">13. КОД СУРАХАД ҮР ДҮНТЭЙ АРГА</span>
+<span class="line">-------------------------------</span>
+<span class="line"></span>
+<span class="line">Хамгийн үр дүнтэй арга бол зөвхөн уншиж, хуулж бичих биш, кодыг өөрөө</span>
+<span class="line">таамаглаж, бичиж, ажиллуулж, алдааг нь засаж, дараа нь тайлбарлаж сурах юм.</span>
+<span class="line">Дараах давталтыг нэг хичээл бүрд хэрэглээрэй:</span>
+<span class="line"></span>
+<span class="line">    ОЙЛГО -&gt; ТААМАГЛА -&gt; БИЧ -&gt; АЖИЛЛУУЛ -&gt; ШАЛГА -&gt; ТАЙЛБАРЛА -&gt; ДАВТ</span>
+<span class="line"></span>
+<span class="line section">1. Нэг удаад нэг жижиг ойлголт сур</span>
+<span class="line"></span>
+<span class="line">    Жишээ нь эхлээд for давталтыг сур. Дараа нь String индекс, дараа нь</span>
+<span class="line">    массив, дараа нь StringBuilder-ийг нэм. Бүх кодыг нэг дор цээжлэх гэж</span>
+<span class="line">    бүү оролд.</span>
+<span class="line"></span>
+<span class="line section">2. Кодоо ажиллуулахаас өмнө үр дүнг таамагла</span>
+<span class="line"></span>
+<span class="line code">    convert(&quot;PAYPALISHIRING&quot;, 3) юу буцаахыг цаасан дээр таамагла.</span>
+<span class="line">    Дараа нь ажиллуулж таамгаа шалга. Алдсан бол яагаад алдсанаа ол.</span>
+<span class="line">    Ингэснээр кодыг уншаад үр дүнг төсөөлөх чадвар хөгжнө.</span>
+<span class="line"></span>
+<span class="line section">3. Кодыг гараар мөрдөж бич</span>
+<span class="line"></span>
+<span class="line">    Жижиг оролт сонго. Жишээ нь &quot;ABCDE&quot;, 3.</span>
+<span class="line">    Давталтын алхам бүрд дараах утгуудыг хүснэгтэд тэмдэглэ:</span>
+<span class="line"></span>
+<span class="line">        тэмдэгт | i | row | direction | rows-ийн агуулга</span>
+<span class="line"></span>
+<span class="line">    Ингэснээр индекс, чиглэл, нөхцөлүүд хэрхэн хамт ажиллаж байгааг харна.</span>
+<span class="line"></span>
+<span class="line section">4. Харахгүйгээр өөрөө бич</span>
+<span class="line"></span>
+<span class="line">    Тайлбар болон бэлэн кодоо түр хаагаад алгоритмыг өөрийн үгээр бич:</span>
+<span class="line">        а. Оролт тохиромжгүй бол шууд буцаа.</span>
+<span class="line">        б. Мөр тус бүрийн текст хадгалах сав үүсгэ.</span>
+<span class="line">        в. Тэмдэгт бүрийг одоогийн мөрөнд нэм.</span>
+<span class="line">        г. Дээд/доод захад хүрэхэд чиглэлээ соль.</span>
+<span class="line">        д. Мөрүүдийг нийлүүлж буцаа.</span>
+<span class="line"></span>
+<span class="line">    Эхлээд псевдокод бичээд, дараа нь Java код болго. Гацвал багахан</span>
+<span class="line">    хугацаанд тэмдэглэлээ харж болно; дараа нь дахин хааж өөрөө үргэлжлүүл.</span>
+<span class="line"></span>
+<span class="line section">5. Кодыг нэг нэг өөрчлөлтөөр турш</span>
+<span class="line"></span>
+<span class="line">    Дараах өөрчлөлт бүрийн өмнө юу болохыг таамаглаад, дараа нь ажиллуул:</span>
+<span class="line">        - мөрийн тоог 3-аас 4 болгох;</span>
+<span class="line">        - эх текстийг өөрчлөх;</span>
+<span class="line">        - давтагдсан тэмдэгт оруулах;</span>
+<span class="line">        - хамгаалалтын if нөхцөлүүдийн нэгийг түр өөрчлөх;</span>
+<span class="line">        - мөрийн индексийн шинэчлэлтийг ажиглах.</span>
+<span class="line"></span>
+<span class="line">    Нэг дор олон өөрчлөлт хийхгүй. Тэгвэл аль өөрчлөлт ямар үр дүн</span>
+<span class="line">    гаргасныг ойлгоход амар.</span>
+<span class="line"></span>
+<span class="line section">6. Захын тохиолдлуудыг өөрөө сонгож шалга</span>
+<span class="line"></span>
+<span class="line">    Энгийн жишээнээс гадна хоосон мөр, нэг мөртэй оролт, мөрийн тоо текстийн</span>
+<span class="line">    урттай тэнцүү оролтыг шалга. Оролт бүрд програм ямар үр дүн өгөх ёстойг</span>
+<span class="line">    эхлээд шийдээд, дараа нь кодын үр дүнтэй харьцуул.</span>
+<span class="line"></span>
+<span class="line section">7. Алдааг өөрөө оношло</span>
+<span class="line"></span>
+<span class="line">    Алдаа гарвал:</span>
+<span class="line">        - алдааны мессежийг бүтнээр унш;</span>
+<span class="line">        - заасан файл, мөр, тэмдэгтийг ол;</span>
+<span class="line">        - саяхан өөрчилсөн кодоо шалга;</span>
+<span class="line">        - нэг удаад нэг засвар хийж дахин ажиллуул.</span>
+<span class="line"></span>
+<span class="line">    Алдааг хараад кодоо шууд бүхэлд нь солиулахын оронд эхлээд өөрөө шалтгааныг</span>
+<span class="line">    тайлбарлахыг оролд. Тэгвэл дараагийн удаа ижил алдааг бие даан засаж чадна.</span>
+<span class="line"></span>
+<span class="line section">8. Өөрийн үгээр тайлбарла</span>
+<span class="line"></span>
+<span class="line">    Кодыг хүн бүр мөрөөр нь харахгүй байсан ч &quot;row юуг хадгалдаг вэ?&quot;,</span>
+<span class="line">    &quot;direction яагаад 1 эсвэл -1 болдог вэ?&quot;, &quot;numRows - 1 яагаад сүүлийн</span>
+<span class="line">    мөрийн индекс вэ?&quot; гэсэн асуултад хариулж чаддаг бол ойлгосны шинж.</span>
+<span class="line"></span>
+<span class="line section">9. Давтаж бататга</span>
+<span class="line"></span>
+<span class="line">    Өнөөдөр сурсан кодоо маргааш бэлэн шийдлийг харалгүй дахин бич.</span>
+<span class="line">    Хэд хоногийн дараа дахин бод. Санахгүй байвал шууд цээжлэх гэж зүтгэлгүй,</span>
+<span class="line">    ойлгоогүй хэсгээ олж жишээгээр бататга.</span>
+<span class="line"></span>
+<span class="line"></span>
+<span class="line section">14. ЭНЭ КОДОД ЗОРИУЛСАН 30 МИНУТЫН ДАДЛАГА</span>
+<span class="line">-----------------------------------------</span>
+<span class="line"></span>
+<span class="line">    0-5 минут:</span>
+<span class="line">        Кодыг уншаад convert method-ийн оролт, гаралт, зорилгыг өөрийн</span>
+<span class="line">        үгээр тэмдэглэ.</span>
+<span class="line"></span>
+<span class="line">    5-10 минут:</span>
+<span class="line">        &quot;ABCDE&quot;, 3 оролтод тэмдэгт бүр хаашаа орохыг гараар мөрдөж бич.</span>
+<span class="line"></span>
+<span class="line">    10-20 минут:</span>
+<span class="line">        Бэлэн кодоо харахгүйгээр convert method-ийг дахин бич.</span>
+<span class="line"></span>
+<span class="line">    20-25 минут:</span>
+<span class="line">        Програмыг хөрвүүлж ажиллуулаад, гаралтаа гараар таамагласантай</span>
+<span class="line">        харьцуул. Алдааг нэг нэгээр нь зас.</span>
+<span class="line"></span>
+<span class="line">    25-30 минут:</span>
+<span class="line">        Өөрийн сонгосон шинэ оролт болон дор хаяж нэг захын тохиолдлыг шалга.</span>
+<span class="line code">        row, direction, массивын үүргийг чангаар тайлбарла.</span>
+<span class="line"></span>
+<span class="line">Дадлагын зорилго нь 30 минутад төгс код бичих биш. Харин бодлогоо ойлгох,</span>
+<span class="line">алхмаа тайлбарлах, алдаагаа олох чадвараа өдөр бүр сайжруулах юм.</span>
+</pre>
+  </main>
+</body>
+</html>
