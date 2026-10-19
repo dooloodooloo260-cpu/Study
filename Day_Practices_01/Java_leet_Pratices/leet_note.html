@@ -51,7 +51,7 @@
 <span class="line">    Тэмдэгт мөрийн төрөл.</span>
 <span class="line"></span>
 <span class="line">int</span>
-<span class="line">    Бүхэл тоон төрөл.</span>
+<span class="line code">    Бүхэл тоон төрөл.</span>
 <span class="line"></span>
 <span class="line">void</span>
 <span class="line">    Method утга буцаахгүй гэсэн үг. main method үр дүн буцаахгүй.</span>
@@ -160,7 +160,7 @@
 <span class="line code">    numRows &lt;= 1</span>
 <span class="line">        Нэг эсвэл түүнээс цөөн мөр хүссэн тул зигзаг үүсэхгүй.</span>
 <span class="line code">    numRows &gt;= s.length()</span>
-<span class="line">        Мөрийн тоо тэмдэгтийн тооноос багагүй тул тэмдэгт бүр өөрийн мөрөнд</span>
+<span class="line code">        Мөрийн тоо тэмдэгтийн тооноос багагүй тул тэмдэгт бүр өөрийн мөрөнд</span>
 <span class="line">        орно. Дахин байрлуулах шаардлагагүй.</span>
 <span class="line"></span>
 <span class="line">return s нь өгсөн мөрийг буцааж, convert method-ийг дуусгана.</span>
@@ -234,7 +234,7 @@
 <span class="line code">    rows[row]</span>
 <span class="line">        Одоогоор бичиж буй мөрийн StringBuilder.</span>
 <span class="line">    .append(...)</span>
-<span class="line">        Тэмдэгтийг тухайн мөрийн төгсгөлд залгана.</span>
+<span class="line code">        Тэмдэгтийг тухайн мөрийн төгсгөлд залгана.</span>
 <span class="line code">    row == 0</span>
 <span class="line">        Эхний мөрөнд хүрсэн эсэхийг шалгана. Хүрсэн бол доош явах чиглэл</span>
 <span class="line">        тогтоож direction = 1 болгоно.</span>
@@ -377,7 +377,7 @@
 <span class="line code">    int i</span>
 <span class="line">        Давталтын тоолуур буюу тэмдэгтийн индекс.</span>
 <span class="line code">    int row</span>
-<span class="line">        Одоогийн мөрийн индекс.</span>
+<span class="line code">        Одоогийн мөрийн индекс.</span>
 <span class="line code">    int direction</span>
 <span class="line">        Дараагийн алхамд дээш эсвэл доош явах чиглэл.</span>
 <span class="line"></span>
@@ -552,8 +552,29 @@
 <span class="line">        г. Дээд/доод захад хүрэхэд чиглэлээ соль.</span>
 <span class="line">        д. Мөрүүдийг нийлүүлж буцаа.</span>
 <span class="line"></span>
-<span class="line">    Эхлээд псевдокод бичээд, дараа нь Java код болго. Гацвал багахан</span>
-<span class="line">    хугацаанд тэмдэглэлээ харж болно; дараа нь дахин хааж өөрөө үргэлжлүүл.</span>
+<span class="line">    Эхлээд псевдокод бичээд, дараа нь Java код болго. Псевдокод гэдэг нь</span>
+<span class="line">    программчлалын хэлний нарийн дүрэм ашиглахгүйгээр алгоритмын алхмыг</span>
+<span class="line">    энгийн үгээр, дарааллаар нь бичсэн төлөвлөгөө юм. Энэ нь код биш учраас</span>
+<span class="line">    Java-ийн цэг таслал, төрөл, хаалтыг ягштал бичих шаардлагагүй.</span>
+<span class="line"></span>
+<span class="line">    Zigzag Conversion-ийн псевдокод:</span>
+<span class="line"></span>
+<span class="line code">        Хэрэв текст хоосон эсвэл өөрчлөх шаардлагагүй бол текстийг буцаа.</span>
+<span class="line code">        Мөрийн тоотой тэнцүү тооны хоосон мөр бэлд.</span>
+<span class="line code">        Одоогийн мөрийг эхний мөр болго; чиглэлийг доош гэж тохируул.</span>
+<span class="line code">        Текстийн тэмдэгт бүрийг дарааллаар нь авч үз:</span>
+<span class="line code">            Тэмдэгтийг одоогийн мөрөнд нэм.</span>
+<span class="line code">            Хэрэв эхний мөрөнд байвал чиглэлийг доош болго.</span>
+<span class="line code">            Үгүй бол, сүүлийн мөрөнд байвал чиглэлийг дээш болго.</span>
+<span class="line code">            Чиглэлийн дагуу дараагийн мөр рүү шилж.</span>
+<span class="line code">        Бүх мөрийг дээрээс доош залга.</span>
+<span class="line code">        Үүссэн текстийг буцаа.</span>
+<span class="line"></span>
+<span class="line">    Псевдокодыг бичсэний дараа алхам бүрийг Java хэлний тодорхой бүтцэд</span>
+<span class="line">    хөрвүүлнэ. Жишээ нь “тэмдэгт бүрийг авч үз” гэдэг нь for давталт,</span>
+<span class="line">    “хэрэв ... бол” гэдэг нь if нөхцөл, “тэмдэгтийг мөрөнд нэм” гэдэг нь</span>
+<span class="line">    append() дуудалт болно. Гацвал багахан хугацаанд тэмдэглэлээ харж болно;</span>
+<span class="line">    дараа нь дахин хааж өөрөө үргэлжлүүл.</span>
 <span class="line"></span>
 <span class="line section">5. Кодыг нэг нэг өөрчлөлтөөр турш</span>
 <span class="line"></span>
